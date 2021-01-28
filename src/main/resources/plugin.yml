@@ -1,0 +1,6 @@
+name: NoPetPrefix
+main: dev.frankheijden.nopetprefix.NoPetPrefix
+version: ${version}
+author: "FrankHeijden"
+depend: ["ProtocolLib"]
+api-version: "1.13"
