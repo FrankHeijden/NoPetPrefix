@@ -8,6 +8,7 @@ import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.reflect.FieldAccessException;
 import com.comphenix.protocol.wrappers.WrappedDataWatcher;
 import com.comphenix.protocol.wrappers.WrappedWatchableObject;
+import org.bukkit.entity.Tameable;
 import org.bukkit.plugin.Plugin;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class PetPrefixAdapter extends PacketAdapter {
         PacketContainer packet = event.getPacket();
         try {
             WrapperPlayServerEntityMetadata wrap = new WrapperPlayServerEntityMetadata(packet);
+            if (!(wrap.getEntity(event.getPlayer().getWorld()) instanceof Tameable)) return;
             List<WrappedWatchableObject> meta = wrap.getMetadata();
 
             for (int i = 0; i < meta.size(); i++) {
