@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'dev.frankheijden.nopetprefix'
-version = '1.0.0'
+version = '1.0.1'
 description = 'NoPetPrefix'
 sourceCompatibility = '1.8'
 
